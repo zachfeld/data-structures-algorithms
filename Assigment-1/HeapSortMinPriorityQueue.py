@@ -1,3 +1,4 @@
+import sys
 # this function maintains the min heap property of a given node in an array
 def minHeapify(arr, heapSize, parentIndex):
 
@@ -42,7 +43,7 @@ def heapSortMin(arr):
 
 #given a child index, returns parent index of the heap
 def getParentIndex(childIndex):
-    parentIndex = (childIndex - 1) / 2
+    parentIndex = (childIndex - 1) // 2
     return parentIndex
 
 # inserts a value into the heap
@@ -63,7 +64,7 @@ def extractMin(arr):
     buildMinHeap(arr)
     #don't want to eliminate the last element, so if there is only one element do nothing
     if len(arr) < 1:
-        return
+        exit()
     else:
         min = arr[0]
         #move a value to the place of the extracted value
@@ -78,7 +79,7 @@ def extractMin(arr):
 #which is assumed to be at least as small as x already is
 def decreaseKey(arr, index, value):
     if value > arr[index]:
-        return #new value is larger than current value at given index
+        exit() #new value is larger than current value at given index
     arr[index] = value
     while (index > 0 and arr[getParentIndex(index)] > arr[index]):
         #swap parent with child
