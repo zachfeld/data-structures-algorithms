@@ -74,12 +74,12 @@ def extractMin(arr):
         minHeapify(arr, len(arr), 0)
         return min
 
-#incereases the value of element x's key to the new value k
-#which is assumed to be at least as large as x already is
+#decreases the value of position index to the new value
+#which is assumed to be at least as small as x already is
 def decreaseKey(arr, index, value):
     if value > arr[index]:
         return #new value is larger than current value at given index
-    a[index] = value
+    arr[index] = value
     while (index > 0 and arr[getParentIndex(index)] > arr[index]):
         #swap parent with child
         arr[index], arr[getParentIndex(index)] = arr[getParentIndex(index)], arr[index]
