@@ -41,8 +41,22 @@ def heapSortMin(arr):
         minHeapify(arr, index, 0)
 
 
+#test for random set of numbers power of two
 arr = [7, 11, 12, 14, 15, 7, 8, 1]
-
 heapSortMin(arr)
+print(arr)
 
+#test for random set of numbers non power of two
+arr = [8, 5, 4, 33, 5, 66, 8, 102, 130, 123, 64, 705, 124]
+heapSortMin(arr)
+print(arr)
+
+#test for reverse sorted non power of two
+arr = [1, 2, 3, 4, 5, 6, 7]
+heapSortMin(arr)
+print(arr)
+
+#test for pre sorted non power of two
+arr = [7, 6, 5, 4, 3, 2, 1]
+heapSortMin(arr)
 print(arr)

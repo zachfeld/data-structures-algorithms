@@ -51,7 +51,7 @@ def insert(arr, value):
     #put a really large value into the end of the heap
     arr.append(float('inf'))
     #put that value where it needs to be, using the decrease key
-    decreaseKey(arr, len(arr), value)
+    decreaseKey(arr, len(arr) - 1, value)
 
 #returns the element with the highest value
 def minimum(arr):
@@ -87,8 +87,42 @@ def decreaseKey(arr, index, value):
         #move index up to the parent index
         index = getParentIndex(index)
 
-arr = [7, 11, 12, 14, 15, 7, 8, 1]
+#test all methods on power of two
+arr = [7, 4, 9, 5, 10, 14, 16, 54]
+buildMinHeap(arr)
 
-heapSortMin(arr)
-
+decreaseKey(arr, 7, 2)
+print("2 inserted at last position, should bubble to top")
 print(arr)
+
+print("remove smallest from array, still maintain property")
+extractMin(arr)
+print(arr)
+
+print("insert 1 into array, should bubble to top")
+insert(arr, 1)
+print(arr)
+
+print("return the minimum value of the heap")
+print(minimum(arr))
+
+print('\n\n')
+
+#test all methods on NOT power of two
+arr = [7, 4, 9, 5, 10, 16, 14]
+buildMinHeap(arr)
+
+decreaseKey(arr, 6, 2)
+print("2 inserted at last position, should bubble to top")
+print(arr)
+
+print("remove smallest from array, still maintain property")
+extractMin(arr)
+print(arr)
+
+print("insert 1 into array, should bubble to top")
+insert(arr, 1)
+print(arr)
+
+print("return the minimum value of the heap")
+print(minimum(arr))
